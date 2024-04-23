@@ -1,21 +1,21 @@
 {
-    "compilerOptions": {
-      /* Linting */
-      "strict": true,
-      "noUnusedLocals": true,
-      "noUnusedParameters": true,
-      "noFallthroughCasesInSwitch": true
-    },
-    "include": [
-      ".eslintrc.cjs",
-      "tailwind.config.js",
-      ".prettierrc.cjs",
-      "codegen.ts",
-      "vite.config.ts",
-      "tsconfig.json",
-      "tsconfig.node.json",
-      "tsconfig.eslint.json",
-      "postcss.config.js",
-      "vitest-setup.ts"
-    ]
-  }
+  "compilerOptions": {
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": [
+    ".eslintrc.cjs",
+    "tailwind.config.js",
+    ".prettierrc.cjs",
+    "codegen.ts",
+    "vite.config.ts",
+    "tsconfig.json",
+    "tsconfig.node.json",
+    "tsconfig.eslint.json",
+    "postcss.config.js",
+    "vitest-setup.ts"
+  ]
+}
