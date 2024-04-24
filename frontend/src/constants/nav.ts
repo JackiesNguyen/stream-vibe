@@ -1,15 +1,20 @@
-export const headerLinks = {
-  home: {
+export const headerLinks = [
+  {
     title: 'Home',
     path: '/',
   },
-  MoviesShows: {
+  {
     title: 'Movies & Shows',
-    path: '/about',
+    path: '/movie-shows',
   },
-  Support: {
+  {
     title: 'Support',
-    path: '/contact',
+    path: '/support',
   },
-}
+  {
+    title: 'Subscriptions',
+    path: '/subscriptions',
+  },
+]
+
 export const footerLinks = {}
