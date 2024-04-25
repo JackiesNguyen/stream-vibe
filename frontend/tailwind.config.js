@@ -4,9 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
+        'black-10': 'var(--black-10)',
+        'black-15': 'var(--black-15)',
         primary: 'var(--primary)',
+      },
+      boxShadow: {
+        custom: 'var(--boxShadow-custom)',
       },
     },
   },
-  plugins: [],
+  // eslint-disable-next-line global-require, import/no-extraneous-dependencies
+  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography'), require('tailwindcss-rfs')],
 }
