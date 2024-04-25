@@ -6,6 +6,9 @@ export default {
       colors: {
         primary: 'var(--primary)',
       },
+      boxShadow: {
+        custom: 'var(--shadow-custom)',
+      },
     },
   },
   plugins: [],

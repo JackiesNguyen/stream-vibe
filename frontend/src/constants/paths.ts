@@ -7,11 +7,11 @@ const PATH = {
   },
   USER: {
     HOME: '/',
-    MOVIES_OPEN_PAGE: '/movies-open-page',
-    MOVIES_SHOWS_PAGE: '/movies-shows-page',
-    SHOWS_OPEN_PAGE: '/shows-open-page',
-    SUBSCRIPTION_PAGE: '/subscription-page',
-    SUPPORT_PAGE: '/support-page',
+    MOVIES_OPEN_PAGE: '/movies-open',
+    MOVIES_SHOWS_PAGE: '/movies-shows',
+    SHOWS_OPEN_PAGE: '/shows-open',
+    SUBSCRIPTION_PAGE: '/subscription',
+    SUPPORT_PAGE: '/support',
   },
   ADMIN: {
     DASHBOARD: '/admin/dashboard',

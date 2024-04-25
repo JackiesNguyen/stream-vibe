@@ -38,6 +38,7 @@
     --text-primary: #aeb7c0;
     --bg-primary: #f1f5f9;
     --gray-primary: #eff2f7;
+    --shadow-custom: -10px -10px 30px 4px rgba(0, 0, 0, 0.1), 10px 10px 30px 4px rgba(45, 78, 255, 0.15);
   }
 
   .dark {
