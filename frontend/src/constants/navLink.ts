@@ -18,4 +18,113 @@ export const headerLinks = [
     title: 'Subscriptions',
   },
 ] as const
-export const footerLinks = []
+
+export const footerLinks = [
+  {
+    heading: 'Home',
+    navigation: [
+      {
+        title: 'Categories',
+        link: '/',
+      },
+      {
+        title: 'Devices',
+        link: '/',
+      },
+      {
+        title: 'Pricing',
+        link: '/',
+      },
+      {
+        title: 'FAQ',
+        link: '/',
+      },
+    ],
+  },
+  {
+    heading: 'Movies',
+
+    navigation: [
+      {
+        title: 'Popular',
+        link: '/',
+      },
+      {
+        title: 'New Release',
+        link: '/',
+      },
+      {
+        title: 'Trending',
+        link: '/',
+      },
+      {
+        title: 'Genres',
+        link: '/',
+      },
+    ],
+  },
+  {
+    heading: 'Shows',
+
+    navigation: [
+      {
+        title: 'Genres',
+        link: '/',
+      },
+      {
+        title: 'Trending',
+        link: '/',
+      },
+      {
+        title: 'New Release',
+        link: '/',
+      },
+      {
+        title: 'Popular',
+        link: '/',
+      },
+    ],
+  },
+  {
+    heading: 'Support',
+
+    navigation: [
+      {
+        title: 'Contact Us',
+        link: '/',
+      },
+    ],
+  },
+  {
+    heading: 'Subscription',
+
+    navigation: [
+      {
+        title: 'Plans',
+        link: '/',
+      },
+      {
+        title: 'Features',
+        link: '/',
+      },
+    ],
+  },
+  {
+    heading: 'Connect With Us',
+
+    navigation: [
+      {
+        title: 'Facebook',
+        link: 'https://www.facebook.com/vanhai0610/',
+      },
+      {
+        title: 'Twitter',
+        link: '/',
+      },
+      {
+        title: 'Instagram',
+        link: '/',
+      },
+    ],
+  },
+] as const
