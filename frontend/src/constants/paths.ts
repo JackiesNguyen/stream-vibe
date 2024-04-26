@@ -10,13 +10,13 @@ const PATH = {
     MOVIES_OPEN_PAGE: '/movies-open-page',
     MOVIES_SHOWS_PAGE: '/movies-shows-page',
     SHOWS_OPEN_PAGE: '/shows-open-page',
-    SUBSCRIPTION_PAGE: '/subscription-page',
+    SUBSCRIPTIONS_PAGE: '/subscriptions-page',
     SUPPORT_PAGE: '/support-page',
   },
   ADMIN: {
     DASHBOARD: '/admin/dashboard',
   },
   NOTFOUND: '*',
-}
+} as const
 
 export default PATH
