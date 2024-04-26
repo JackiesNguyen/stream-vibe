@@ -4,12 +4,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        'black-10': 'var(--black-10)',
-        'black-15': 'var(--black-15)',
+        black: {
+          10: 'var(--black-10)',
+          15: 'var(--black-15)',
+          '06': 'var(--black-06)',
+        },
+        grey: {
+          60: 'var(--grey-60)',
+        },
         primary: 'var(--primary)',
       },
       boxShadow: {
-        custom: 'var(--boxShadow-custom)',
+        primary: 'var(--boxShadow-primary)',
       },
     },
   },
