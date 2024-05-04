@@ -12,7 +12,7 @@ const buttonVariants = cva(
         default: 'bg-primary text-white',
       },
       size: {
-        default: 'h-12 px-2 py-4 w-28',
+        default: 'p-4',
       },
     },
     defaultVariants: {

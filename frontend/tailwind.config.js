@@ -5,12 +5,18 @@ export default {
     extend: {
       colors: {
         black: {
-          10: 'var(--black-10)',
-          15: 'var(--black-15)',
           '06': 'var(--black-06)',
+          '08': 'var(--black-08)',
+          10: 'var(--black-10)',
+          12: 'var(--black-12)',
+          15: 'var(--black-15)',
+          20: 'var(--black-20)',
         },
         grey: {
           60: 'var(--grey-60)',
+        },
+        red: {
+          45: 'var(--red-45)',
         },
         primary: 'var(--primary)',
       },

@@ -6,11 +6,12 @@ import PATH from '~/constants/paths'
 
 import MobileNav from '../MobileNav'
 import NavItems from '../NavItems'
+import WrapperContainer from '../WrapperContainer'
 
 const Header = () => {
   return (
     <header className="fixed left-0 right-0 top-0 z-50 bg-transparent">
-      <div className="flex items-center justify-between px-7 py-5 lg:px-10">
+      <WrapperContainer className="flex items-center justify-between lg:px-10">
         <Link to={PATH.USER.HOME}>
           <img src={logo} alt="logo" className="w-29 h-9 object-cover sm:h-12 sm:w-40 lg:h-16 lg:w-52" />
         </Link>
@@ -23,7 +24,7 @@ const Header = () => {
         </div>
         {/* Mobile nav */}
         <MobileNav />
-      </div>
+      </WrapperContainer>
     </header>
   )
 }

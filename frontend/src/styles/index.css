@@ -47,9 +47,13 @@ body {
     --grey-60: #999999;
 
     /* Black */
-    --black-10: #1a1a1a;
-    --black-15: #262626;
     --black-06: #0f0f0f;
+    --black-08: #141414;
+    --black-10: #1a1a1a;
+    --black-12: #1f1f1f;
+    --black-15: #262626;
+    --black-20: #333333;
+    --red-45: #e50000;
   }
 
   .dark {
@@ -89,11 +93,10 @@ body {
 }
 
 /* Hang bao ton */
-.customCss {
-  position: relative;
-  background: linear-gradient(to bottom, #191919, var(--black-06));
+.bg-linear-gradient {
+  background: linear-gradient(to bottom, #191919, var(--black-08));
 }
-.customCss::after {
+.bg-linear-gradient::after {
   position: absolute;
   content: '';
   width: 100%;
