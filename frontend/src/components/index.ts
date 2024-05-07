@@ -1,4 +1,6 @@
 export * from './Button'
+export { default as CardCarousel } from './CardCarousel'
+export { default as Carousel } from './Carousel'
 export { default as Footer } from './Footer'
 export { default as Header } from './Header'
 export { default as Heading } from './Heading'
