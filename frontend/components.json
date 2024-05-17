@@ -11,7 +11,7 @@
     "prefix": ""
   },
   "aliases": {
-    "components": "src/shadcn",
+    "components": "src/components/@shadcnUI",
     "utils": "src/libs/utils.ts"
   }
 }

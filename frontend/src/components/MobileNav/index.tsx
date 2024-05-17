@@ -1,4 +1,4 @@
-import { iconMenu, logo } from '~/assets'
+import { iconMenu, imgLogo } from '~/assets'
 
 import NavItems from '../NavItems'
 import { Sheet, SheetContent, SheetTrigger } from '../Sheet'
@@ -14,7 +14,7 @@ const MobileNav = () => {
         </SheetTrigger>
         <SheetContent>
           <div className="mt-10">
-            <img src={logo} alt="logo" className="mb-8 h-[50px] w-[165px] object-cover" />
+            <img src={imgLogo} alt="logo" className="mb-8 h-[50px] w-[165px] object-cover" />
             <NavItems />
           </div>
         </SheetContent>

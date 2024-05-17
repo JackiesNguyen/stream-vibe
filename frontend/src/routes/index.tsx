@@ -1,7 +1,8 @@
 import { useRoutes } from 'react-router-dom'
 
 import PATH from '~/constants/paths'
-import DefaultLayout from '~/layouts'
+import { DefaultLayout } from '~/layouts'
+
 import { HomePage, MoviesOpenPage, MoviesShowsPage, NotFound } from '~/pages'
 
 const Routes = () => {

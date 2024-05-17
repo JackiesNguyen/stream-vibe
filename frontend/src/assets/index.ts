@@ -1,8 +1,10 @@
-import hero from './hero.svg'
-import iconMenu from './iconMenu.svg'
-import iconNext from './iconNext.svg'
-import iconPrev from './iconPrev.svg'
-import logo from './logo.svg'
-import poster from './poster.jpg'
+// ICONS
+import iconMenu from './icons/iconMenu.svg'
+import iconNext from './icons/iconNext.svg'
+import iconPrevious from './icons/iconPrevious.svg'
+// IMAGES
+import imgHero from './images/imgHero.svg'
+import imgLogo from './images/imgLogo.svg'
+import imgPoster from './images/imgPoster.jpg'
 
-export { hero, iconMenu, iconNext, iconPrev, logo, poster }
+export { iconMenu, iconNext, iconPrevious, imgHero, imgLogo, imgPoster }

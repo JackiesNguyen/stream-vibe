@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
 
-import { footerLinks } from '~/constants/navLink'
+import { footerLinks } from '~/constants/navLinks'
 
 const Footer = () => {
   return (

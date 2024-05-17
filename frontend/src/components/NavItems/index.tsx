@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
 
-import { headerLinks } from '~/constants/navLink'
+import { headerLinks } from '~/constants/navLinks'
 import cn from '~/libs/utils'
 
 const NavItems = () => {
