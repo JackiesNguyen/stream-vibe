@@ -7,7 +7,7 @@ import cn from '~/libs/utils'
 const NavItems = () => {
   const location = useLocation()
   return (
-    <ul className="lg:bg-black flex flex-col gap-5 rounded-lg bg-transparent px-4 py-2 lg:flex-row lg:items-center lg:border lg:border-gray-700 lg:bg-black-06 lg:shadow-primary">
+    <ul className="lg:bg-black flex flex-col gap-5 rounded-lg bg-transparent px-4 py-2 lg:flex-row lg:items-center lg:border-4 lg:border-black-12 lg:bg-black-06 lg:shadow-primary">
       {headerLinks.map((item) => {
         const isActive = location.pathname === item.path
         return (

@@ -2,9 +2,10 @@ import React from 'react'
 import type Slider from 'react-slick'
 import { Play } from 'lucide-react'
 
-import { imgHero } from '~/assets'
 import { Button, Carousel, Heading, NextPreButtons, WrapperContainer } from '~/components'
+import CardExperience from '~/components/CardExperience'
 import Helmet from '~/components/Helmet'
+import experiences from '~/constants/experiences'
 
 const HomePage = () => {
   const arrData = {
@@ -42,7 +43,11 @@ const HomePage = () => {
     <>
       <Helmet title="Home" />
       <div className="relative">
-        <img src={imgHero} alt="hero" className="h-[640px] w-full object-cover sm:h-[836px] lg:h-screen" />
+        <img
+          src="https://res.cloudinary.com/dulkwgwws/image/upload/v1716459234/images/curbhrxkjpspxppbqkjt.png"
+          alt="hero"
+          className="h-[640px] w-full object-cover sm:h-[836px] lg:h-screen"
+        />
         <div className="bg-linear-gradient relative h-[250px] w-full sm:h-[300px]">
           <div className="absolute -top-20 left-0 right-0 z-10 flex h-full w-full justify-center text-white">
             <div className="flex max-w-[1096px] flex-col items-center gap-5 px-5 text-center">
@@ -62,17 +67,15 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <WrapperContainer className="relative bg-black-08 pt-20">
+        <WrapperContainer className="bg-black-08">
           {/* Explore */}
-          <div>
+          <section className="py-20">
             <div className="flex flex-row items-center justify-between gap-5">
-              <div className="flex flex-col gap-5">
-                <Heading content="Explore our wide variety of categories" />
-                <span className="text-sm font-normal leading-normal text-grey-60 lg:text-lg">
-                  Whether you&apos;re looking for a comedy to make you laugh, a drama to make you think, or a
-                  documentary to learn something new
-                </span>
-              </div>
+              <Heading
+                content="Explore our wide variety of categories"
+                subContent="Whether you're looking for a comedy to make you laugh, a drama to make you think, or a
+                  documentary to learn something new"
+              />
               <NextPreButtons
                 onNextClick={handleNext}
                 onPrevClick={handlePrevious}
@@ -80,10 +83,25 @@ const HomePage = () => {
                 totalData={arrData.totalData}
               />
             </div>
-          </div>
-          <div className="mt-14">
-            <Carousel arrData={arrData} ref={carouselRef} />
-          </div>
+            <div className="mt-14">
+              <Carousel arrData={arrData} ref={carouselRef} />
+            </div>
+          </section>
+
+          {/* Experience */}
+          <section className="py-20">
+            <div className="flex flex-col gap-20">
+              <Heading
+                content="We Provide you streaming experience across various devices."
+                subContent="With StreamVibe, you can enjoy your favorite movies and TV shows anytime, anywhere. Our platform is designed to be compatible with a wide range of devices, ensuring that you never miss a moment of entertainment."
+              />
+              <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+                {experiences.map((experience) => (
+                  <CardExperience key={experience.id} experience={experience} />
+                ))}
+              </div>
+            </div>
+          </section>
         </WrapperContainer>
       </div>
     </>

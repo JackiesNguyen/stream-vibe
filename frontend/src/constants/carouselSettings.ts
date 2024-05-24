@@ -23,6 +23,7 @@ const carouselSettings = {
         slidesToShow: 2,
         slidesToScroll: 2,
         initialSlide: 2,
+        dotsClass: 'slick-dots slick-thumb',
       },
     },
   ],

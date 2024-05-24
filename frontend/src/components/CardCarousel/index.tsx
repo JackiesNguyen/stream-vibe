@@ -14,8 +14,8 @@ const CardCarousel = ({ data }: ICardCarouselProps) => {
         <img src={imgPoster} alt="video" className="h-full w-full rounded-xl object-cover" />
       </div>
       <div className="mt-2 flex items-center justify-between text-white">
-        <span className="text-sm font-semibold">{data.title}</span>
-        <ArrowRight width={20} height={20} />
+        <span className="text-sm font-semibold lg:text-lg">{data.title}</span>
+        <ArrowRight className="w-5 lg:w-9" />
       </div>
     </div>
   )
