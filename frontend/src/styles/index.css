@@ -42,14 +42,23 @@ body {
     --text-primary: #aeb7c0;
     --bg-primary: #f1f5f9;
     --gray-primary: #eff2f7;
-    --boxShadow-primary: 0 20px 50px rgba(8, 112, 184, 0.7);
+    --boxShadow-primary: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     /* Grey */
     --grey-60: #999999;
 
     /* Black */
-    --black-10: #1a1a1a;
-    --black-15: #262626;
     --black-06: #0f0f0f;
+    --black-08: #141414;
+    --black-10: #1a1a1a;
+    --black-12: #1f1f1f;
+    --black-15: #262626;
+    --black-20: #333333;
+    --red-45: #e50000;
+
+    /* Gradient */
+
+    --experiences-card: linear-gradient(222deg, rgba(229, 0, 0, 0.5) -208.03%, rgba(229, 0, 0, 0) 41.32%), #0f0f0f;
+    --accordion-card: linear-gradient(90deg, rgba(229, 0, 0, 0) 0%, #e50000 16.67%, rgba(229, 0, 0, 0) 100%);
   }
 
   .dark {
@@ -88,12 +97,12 @@ body {
   }
 }
 
-/* Hang bao ton */
-.customCss {
-  position: relative;
-  background: linear-gradient(to bottom, #191919, var(--black-06));
+/* Background gradient */
+.bg-linear-gradient {
+  background: linear-gradient(to bottom, #191919, var(--black-08));
 }
-.customCss::after {
+
+.bg-linear-gradient::after {
   position: absolute;
   content: '';
   width: 100%;
@@ -105,4 +114,37 @@ body {
   filter: blur(10px);
   opacity: 1;
   z-index: 1;
+}
+
+.bg-experiences-card {
+  background: var(--experiences-card);
+}
+
+/* Carousel */
+/* the slides */
+.slick-slide > div {
+  margin: 0 10px;
+}
+/* the parent */
+.slick-list {
+  margin: 0 -10px;
+}
+/* Custom pagination ui mobile */
+
+.slick-dots.slick-thumb {
+  bottom: -40px;
+}
+.slick-dots.slick-thumb li {
+  border-radius: 20px;
+  margin: 0 !important;
+}
+.slick-dots.slick-thumb li button::before {
+  background: white;
+  width: 20px;
+  height: 5px;
+  font-size: 0;
+}
+
+.slick-dots.slick-thumb > .slick-active > button::before {
+  background: var(--red-45);
 }
