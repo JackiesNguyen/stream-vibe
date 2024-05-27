@@ -1,11 +1,13 @@
-import React from 'react'
-import type Slider from 'react-slick'
 import { Play } from 'lucide-react'
 
-import { Button, Carousel, Heading, NextPreButtons, WrapperContainer } from '~/components'
-import CardExperience from '~/components/CardExperience'
+import { Button, WrapperContainer } from '~/components'
 import Helmet from '~/components/Helmet'
-import experiences from '~/constants/experiences'
+
+import Advertisement from './components/Advertisement'
+import Experience from './components/Experience'
+import Explore from './components/Explore'
+import Plans from './components/Plans'
+import Questions from './components/Questions'
 
 const HomePage = () => {
   const arrData = {
@@ -17,26 +19,6 @@ const HomePage = () => {
       { id: 4, title: 'The Content4' },
       { id: 5, title: 'The Content5' },
     ],
-  }
-
-  const carouselRef = React.createRef<Slider>()
-
-  const handleNext = () => {
-    if (carouselRef.current) {
-      carouselRef.current.slickNext()
-    }
-  }
-
-  const handlePrevious = () => {
-    if (carouselRef.current) {
-      carouselRef.current.slickPrev()
-    }
-  }
-
-  const handleStepClick = (index: number) => {
-    if (carouselRef.current) {
-      carouselRef.current.slickGoTo(index)
-    }
   }
 
   return (
@@ -69,39 +51,19 @@ const HomePage = () => {
         </div>
         <WrapperContainer className="bg-black-08">
           {/* Explore */}
-          <section className="py-20">
-            <div className="flex flex-row items-center justify-between gap-5">
-              <Heading
-                content="Explore our wide variety of categories"
-                subContent="Whether you're looking for a comedy to make you laugh, a drama to make you think, or a
-                  documentary to learn something new"
-              />
-              <NextPreButtons
-                onNextClick={handleNext}
-                onPrevClick={handlePrevious}
-                onStepClick={handleStepClick}
-                totalData={arrData.totalData}
-              />
-            </div>
-            <div className="mt-14">
-              <Carousel arrData={arrData} ref={carouselRef} />
-            </div>
-          </section>
+          <Explore data={arrData} />
 
           {/* Experience */}
-          <section className="py-20">
-            <div className="flex flex-col gap-20">
-              <Heading
-                content="We Provide you streaming experience across various devices."
-                subContent="With StreamVibe, you can enjoy your favorite movies and TV shows anytime, anywhere. Our platform is designed to be compatible with a wide range of devices, ensuring that you never miss a moment of entertainment."
-              />
-              <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-                {experiences.map((experience) => (
-                  <CardExperience key={experience.id} experience={experience} />
-                ))}
-              </div>
-            </div>
-          </section>
+          <Experience />
+
+          {/* Questions */}
+          <Questions />
+
+          {/* Plans */}
+          <Plans />
+
+          {/* Advertisement */}
+          <Advertisement />
         </WrapperContainer>
       </div>
     </>

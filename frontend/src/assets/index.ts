@@ -9,6 +9,7 @@ import iconSmartPhones from './icons/iconSmartPhones.svg'
 import iconSmartTV from './icons/iconSmartTV.svg'
 import iconTablet from './icons/iconTablet.svg'
 // IMAGES
+import imgAdvertisement from './images/imgAdvertisement.png'
 import imgLogo from './images/imgLogo.svg'
 import imgPoster from './images/imgPoster.jpg'
 
@@ -22,6 +23,7 @@ export {
   iconSmartPhones,
   iconSmartTV,
   iconTablet,
+  imgAdvertisement,
   imgLogo,
   imgPoster,
 }

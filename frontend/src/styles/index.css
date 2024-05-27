@@ -58,6 +58,7 @@ body {
     /* Gradient */
 
     --experiences-card: linear-gradient(222deg, rgba(229, 0, 0, 0.5) -208.03%, rgba(229, 0, 0, 0) 41.32%), #0f0f0f;
+    --accordion-card: linear-gradient(90deg, rgba(229, 0, 0, 0) 0%, #e50000 16.67%, rgba(229, 0, 0, 0) 100%);
   }
 
   .dark {
@@ -113,22 +114,6 @@ body {
   filter: blur(10px);
   opacity: 1;
   z-index: 1;
-}
-.bg-test {
-  position: relative;
-}
-.bg-test::after {
-  position: absolute;
-  content: '';
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.6;
-  z-index: 1;
-  background: var(--black-10);
 }
 
 .bg-experiences-card {
