@@ -16,12 +16,12 @@ const SwitchTabs = ({ data, onTabChange }: ISwitchTabsProps) => {
   }
 
   return (
-    <div className="flex items-center rounded-xl border border-black-15 bg-black-06 p-2.5 text-white">
+    <div className="flex items-center rounded-xl border border-black-15 bg-black-06 p-2 text-white lg:p-2.5">
       {data.map((tab, index) => (
         <div
           role="button"
           key={uuidv4()}
-          className={cn('p-3.5 text-lg font-medium leading-7 text-grey-60', {
+          className={cn('p-3 text-sm font-medium leading-7 text-grey-60 lg:p-3.5 lg:text-lg', {
             'rounded-lg bg-black-12 text-white': selectedTab === index,
           })}
           onClick={() => {

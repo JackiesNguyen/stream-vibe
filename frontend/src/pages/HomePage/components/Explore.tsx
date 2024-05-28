@@ -28,7 +28,7 @@ const Explore = ({ data }: IExploreProps) => {
     }
   }
   return (
-    <section className="py-20">
+    <section className="py-10 xl:py-20">
       <div className="flex flex-row items-center justify-between gap-5">
         <Heading
           content="Explore our wide variety of categories"
