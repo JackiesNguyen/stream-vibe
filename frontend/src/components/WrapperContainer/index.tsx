@@ -6,7 +6,7 @@ interface IWrapperContainerProps {
 }
 
 const WrapperContainer = ({ className, children }: IWrapperContainerProps) => {
-  return <div className={cn('px-7 py-5 lg:px-24', className)}>{children}</div>
+  return <div className={cn('px-5 py-5 md:px-7 lg:px-24', className)}>{children}</div>
 }
 
 export default WrapperContainer
