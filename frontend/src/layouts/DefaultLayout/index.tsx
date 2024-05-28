@@ -2,9 +2,13 @@ import { Outlet } from 'react-router-dom'
 
 import { Footer, Header } from '~/components'
 
-const DefaultLayout = () => (
+interface IDefaultLayoutProps {
+  headerPosition: string
+}
+
+const DefaultLayout = ({ headerPosition }: IDefaultLayoutProps) => (
   <>
-    <Header />
+    <Header headerPosition={headerPosition} />
     <div className="min-h-screen">
       <Outlet />
     </div>

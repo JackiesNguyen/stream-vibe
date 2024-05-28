@@ -11,8 +11,6 @@ const Plans = () => {
     setEndpoint(tab === 'Movies' ? 'movie' : 'tv')
   }
 
-  console.log(endpoint)
-
   return (
     <section className="flex flex-col gap-20 py-10 xl:py-20">
       <div className="flex flex-col items-start gap-5 md:flex-row md:items-center md:justify-between">

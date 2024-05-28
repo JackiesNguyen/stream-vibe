@@ -8,7 +8,13 @@ import MobileNav from '../MobileNav'
 import NavItems from '../NavItems'
 import WrapperContainer from '../WrapperContainer'
 
-const Header = () => {
+interface IHeaderProps {
+  headerPosition: string
+}
+
+const Header = ({ headerPosition }: IHeaderProps) => {
+  console.log(headerPosition)
+
   return (
     <header className="fixed left-0 right-0 top-0 z-50 bg-transparent">
       <WrapperContainer className="flex items-center justify-between">
