@@ -120,6 +120,22 @@ body {
   background: var(--experiences-card);
 }
 
+.bg-banner {
+  height: 700px;
+  width: 100%;
+  object-fit: cover;
+  background-position: 20px 0;
+  padding-top: 50%;
+  background-size: cover;
+  background:
+    linear-gradient(0deg, var(--black-08) 0%, rgba(20, 20, 20, 0) 100%),
+    url(https://wallpapers.com/images/hd/2013-marvel-studios-movie-thor-hxua9tvc2z0ptxny.jpg) lightgray 50% / cover
+      no-repeat;
+  border-radius: 12px;
+  border: 1px solid var(--black-15);
+  border-bottom: none;
+}
+
 /* Carousel */
 /* the slides */
 .slick-slide > div {

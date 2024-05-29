@@ -3,12 +3,12 @@ import { Outlet } from 'react-router-dom'
 import { Footer, Header } from '~/components'
 
 interface IDefaultLayoutProps {
-  headerPosition: string
+  isFixedPosition: boolean
 }
 
-const DefaultLayout = ({ headerPosition }: IDefaultLayoutProps) => (
+const DefaultLayout = ({ isFixedPosition }: IDefaultLayoutProps) => (
   <>
-    <Header headerPosition={headerPosition} />
+    <Header isFixedPosition={isFixedPosition} />
     <div className="min-h-screen">
       <Outlet />
     </div>

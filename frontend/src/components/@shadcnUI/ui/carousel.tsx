@@ -4,8 +4,10 @@ import * as React from 'react'
 import useEmblaCarousel, { type UseEmblaCarouselType } from 'embla-carousel-react'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 
+import { v4 as uuidv4 } from 'uuid'
 import cn from '~/libs/utils'
-import { Button } from '~/shadcn/ui/button'
+
+import { Button } from './button'
 
 type CarouselApi = UseEmblaCarouselType[1]
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
@@ -26,6 +28,8 @@ type CarouselContextProps = {
   scrollNext: () => void
   canScrollPrev: boolean
   canScrollNext: boolean
+  selectedIndex: number
+  scrollTo: (index: number) => void
 } & CarouselProps
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null)
@@ -50,6 +54,7 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
     )
     const [canScrollPrev, setCanScrollPrev] = React.useState(false)
     const [canScrollNext, setCanScrollNext] = React.useState(false)
+    const [selectedIndex, setSelectedIndex] = React.useState(0)
 
     const onSelect = React.useCallback((api: CarouselApi) => {
       if (!api) {
@@ -58,6 +63,7 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
 
       setCanScrollPrev(api.canScrollPrev())
       setCanScrollNext(api.canScrollNext())
+      setSelectedIndex(api.selectedScrollSnap())
     }, [])
 
     const scrollPrev = React.useCallback(() => {
@@ -80,6 +86,9 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
       },
       [scrollPrev, scrollNext],
     )
+    const scrollTo = React.useCallback((index: number) => {
+      api?.scrollTo(index)
+    }, [])
 
     React.useEffect(() => {
       if (!carouselApi || !setApi) {
@@ -111,8 +120,10 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
         scrollNext,
         canScrollPrev,
         canScrollNext,
+        selectedIndex,
+        scrollTo,
       }),
-      [carouselRef, carouselApi, opts, scrollPrev, scrollNext, canScrollPrev, canScrollNext],
+      [carouselRef, carouselApi, opts, scrollPrev, scrollNext, canScrollPrev, canScrollNext, selectedIndex, scrollTo],
     )
 
     return (
@@ -160,13 +171,47 @@ const CarouselItem = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLD
         ref={ref}
         role="group"
         aria-roledescription="slide"
-        className={cn('min-w-0 shrink-0 grow-0 basis-full', orientation === 'horizontal' ? 'pl-4' : 'pt-4', className)}
+        className={cn(
+          'mx-auto min-w-0 shrink-0 grow-0 basis-full',
+          orientation === 'horizontal' ? 'pl-4' : 'pt-4',
+          className,
+        )}
         {...props}
       />
     )
   },
 )
 CarouselItem.displayName = 'CarouselItem'
+
+const CarouselDots = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
+  ({ className, ...props }) => {
+    const { selectedIndex, scrollTo, api } = useCarousel()
+
+    return (
+      <div
+        className={cn(
+          'embla__dots absolute z-50 mt-4 flex w-[calc(100vw-16px)] items-center justify-center gap-4',
+          className,
+        )}
+        {...props}
+      >
+        {api?.scrollSnapList().map((_, index) => (
+          <Button
+            key={uuidv4()}
+            className={cn(
+              'embla__dot h-4 w-2 rounded-full ',
+              index === selectedIndex ? 'embla__dot--selected ' : 'bg-primary-foreground',
+            )}
+            onClick={() => {
+              scrollTo(index)
+            }}
+          />
+        ))}
+      </div>
+    )
+  },
+)
+CarouselDots.displayName = 'CarouselDots'
 
 const CarouselPrevious = React.forwardRef<HTMLButtonElement, React.ComponentProps<typeof Button>>(
   ({ className, variant = 'outline', size = 'icon', ...props }, ref) => {
@@ -224,4 +269,4 @@ const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<ty
 )
 CarouselNext.displayName = 'CarouselNext'
 
-export { Carousel, type CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious }
+export { Carousel, type CarouselApi, CarouselContent, CarouselDots, CarouselItem, CarouselNext, CarouselPrevious }

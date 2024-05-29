@@ -7,16 +7,16 @@ import { HomePage, MoviesOpenPage, MoviesShowsPage, NotFound } from '~/pages'
 const Routes = () => {
   const location = useLocation()
 
-  const getHeaderPosition = () => {
+  const isFixedPosition = () => {
     if (location.pathname === PATH.USER.HOME) {
-      return 'fixed'
+      return true
     }
-    return 'relative'
+    return false
   }
 
   const element = useRoutes([
     {
-      element: <DefaultLayout headerPosition={getHeaderPosition()} />,
+      element: <DefaultLayout isFixedPosition={isFixedPosition()} />,
       children: [
         {
           index: true,
