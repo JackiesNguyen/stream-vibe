@@ -5,9 +5,9 @@ import { imgLogo } from '~/assets'
 import PATH from '~/constants/paths'
 import cn from '~/libs/utils'
 
-import MobileNav from '../MobileNav'
-import NavItems from '../NavItems'
-import WrapperContainer from '../WrapperContainer'
+import MobileNav from './MobileNav'
+import NavItems from './NavItems'
+import WrapperContainer from './WrapperContainer'
 
 interface IHeaderProps {
   isFixedPosition: boolean
@@ -16,7 +16,7 @@ interface IHeaderProps {
 const Header = ({ isFixedPosition }: IHeaderProps) => {
   return (
     <header
-      className={cn('sticky top-0 bg-black-08', {
+      className={cn('sticky top-0 z-50 bg-black-08', {
         'fixed left-0 right-0 top-0 z-50 bg-transparent': isFixedPosition,
       })}
     >

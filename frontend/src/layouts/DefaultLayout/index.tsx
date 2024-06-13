@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom'
 
-import { Footer, Header } from '~/components'
+import { Footer, Header } from '~/components/shared'
 
 interface IDefaultLayoutProps {
   isFixedPosition: boolean

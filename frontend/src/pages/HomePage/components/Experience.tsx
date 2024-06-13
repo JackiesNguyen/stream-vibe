@@ -1,5 +1,4 @@
-import { Heading } from '~/components'
-import CardExperience from '~/components/CardExperience'
+import { CardExperience, Heading } from '~/components/shared'
 import experiences from '~/constants/experiences'
 
 const Experience = () => {

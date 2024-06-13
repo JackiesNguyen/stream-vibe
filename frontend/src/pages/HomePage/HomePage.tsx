@@ -1,6 +1,6 @@
 import { Play } from 'lucide-react'
 
-import { Button, Helmet, WrapperContainer } from '~/components'
+import { Button, Helmet, WrapperContainer } from '~/components/shared'
 
 import Advertisement from './components/Advertisement'
 import Experience from './components/Experience'

@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid'
 import carouselSettings from '~/constants/carouselSettings'
 import { type ICardCarousel } from '~/types/cardCarousel'
 
-import CardCarousel from '../CardCarousel'
+import CardCarousel from './CardCarousel'
 
 interface ICarouselProps {
   arrData: ICardCarousel

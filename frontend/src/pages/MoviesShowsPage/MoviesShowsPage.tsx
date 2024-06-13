@@ -1,5 +1,4 @@
-import { Helmet, WrapperContainer } from '~/components'
-import CustomCarousel from '~/components/CustomCarousel'
+import { Banner, Helmet, WrapperContainer } from '~/components/shared'
 
 const MoviesShowsPage = () => {
   return (
@@ -7,7 +6,7 @@ const MoviesShowsPage = () => {
       <Helmet title="Home" />
       <div className="min-h-screen bg-black-08">
         <WrapperContainer>
-          <CustomCarousel />
+          <Banner />
         </WrapperContainer>
       </div>
     </>

@@ -1,7 +1,7 @@
 import React from 'react'
 import type Slider from 'react-slick'
 
-import { Carousel, Heading, NextPreButtons } from '~/components'
+import { Carousel, Heading, NextPreButtons } from '~/components/shared'
 import { type ICardCarousel } from '~/types/cardCarousel'
 
 interface IExploreProps {

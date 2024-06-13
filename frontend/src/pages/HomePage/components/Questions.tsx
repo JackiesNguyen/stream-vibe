@@ -1,5 +1,4 @@
-import { Button, Heading } from '~/components'
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '~/components/Accordion'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, Button, Heading } from '~/components/shared'
 import accordions from '~/constants/accordions'
 
 const Questions = () => {
