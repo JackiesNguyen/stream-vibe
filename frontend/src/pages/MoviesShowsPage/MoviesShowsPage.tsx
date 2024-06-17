@@ -3,7 +3,7 @@ import { Banner, Helmet, WrapperContainer } from '~/components/shared'
 const MoviesShowsPage = () => {
   return (
     <>
-      <Helmet title="Home" />
+      <Helmet title="Movies show" />
       <div className="min-h-screen bg-black-08">
         <WrapperContainer>
           <Banner />
