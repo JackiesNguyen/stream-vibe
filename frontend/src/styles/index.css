@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('./banner.css');
+@import url('./carousel.css');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -57,8 +59,9 @@ body {
 
     /* Gradient */
 
-    --experiences-card: linear-gradient(222deg, rgba(229, 0, 0, 0.5) -208.03%, rgba(229, 0, 0, 0) 41.32%), #0f0f0f;
-    --accordion-card: linear-gradient(90deg, rgba(229, 0, 0, 0) 0%, #e50000 16.67%, rgba(229, 0, 0, 0) 100%);
+    --liner-experiences-card: linear-gradient(222deg, rgba(229, 0, 0, 0.5) -208.03%, rgba(229, 0, 0, 0) 41.32%), #0f0f0f;
+    --liner-accordion-card: linear-gradient(90deg, rgba(229, 0, 0, 0) 0%, #e50000 16.67%, rgba(229, 0, 0, 0) 100%);
+    --liner-carousel-card: linear-gradient(180deg, rgba(26, 26, 26, 0) 0%, #1a1a1a 101.79%);
   }
 
   .dark {
@@ -117,42 +120,5 @@ body {
 }
 
 .bg-experiences-card {
-  background: var(--experiences-card);
-}
-
-/* Carousel */
-/* the slides */
-.slick-slide > div {
-  margin: 0 10px;
-}
-/* the parent */
-.slick-list {
-  margin: 0 -10px;
-}
-/* Custom pagination ui mobile */
-
-.slick-dots.slick-thumb {
-  bottom: -40px;
-}
-.slick-dots.slick-thumb li {
-  border-radius: 20px;
-  margin: 0 !important;
-}
-.slick-dots.slick-thumb li button::before {
-  background: white;
-  width: 20px;
-  height: 5px;
-  font-size: 0;
-}
-
-.slick-dots.slick-thumb > .slick-active > button::before {
-  background: var(--red-45);
-}
-
-/* Banner */
-
-.banner {
-}
-.banner .slick-slide > div {
-  margin: 0;
+  background: var(--liner-experiences-card);
 }

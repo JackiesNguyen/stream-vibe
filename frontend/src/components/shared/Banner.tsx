@@ -1,5 +1,3 @@
-import '~/styles/banner.css'
-
 import Slider from 'react-slick'
 import { Play, Plus, ThumbsUp, Volume2 } from 'lucide-react'
 
@@ -18,7 +16,7 @@ const Banner = () => {
   const image = 'https://wallpapers.com/images/hd/2013-marvel-studios-movie-thor-hxua9tvc2z0ptxny.jpg'
 
   return (
-    <div className="banner">
+    <div className="banner mb-44">
       <div className="slider-container banner-container">
         <Slider {...settings}>
           <div className="relative rounded-xl">

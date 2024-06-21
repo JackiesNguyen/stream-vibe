@@ -2,11 +2,7 @@ import { Play } from 'lucide-react'
 
 import { Button, Helmet, WrapperContainer } from '~/components/shared'
 
-import Advertisement from './components/Advertisement'
-import Experience from './components/Experience'
-import Explore from './components/Explore'
-import Plans from './components/Plans'
-import Questions from './components/Questions'
+import { Advertisement, Experience, Explore, Plans, Questions } from './components'
 
 const HomePage = () => {
   const arrData = {
