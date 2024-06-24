@@ -1,7 +1,7 @@
 import { iconMenu, imgLogo } from '~/assets'
 
-import NavItems from '../NavItems'
-import { Sheet, SheetContent, SheetTrigger } from '../Sheet'
+import NavItems from './NavItems'
+import { Sheet, SheetContent, SheetTrigger } from './Sheet'
 
 const MobileNav = () => {
   return (

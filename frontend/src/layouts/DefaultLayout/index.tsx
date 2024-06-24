@@ -1,10 +1,14 @@
 import { Outlet } from 'react-router-dom'
 
-import { Footer, Header } from '~/components'
+import { Footer, Header } from '~/components/shared'
 
-const DefaultLayout = () => (
+interface IDefaultLayoutProps {
+  isFixedPosition: boolean
+}
+
+const DefaultLayout = ({ isFixedPosition }: IDefaultLayoutProps) => (
   <>
-    <Header />
+    <Header isFixedPosition={isFixedPosition} />
     <div className="min-h-screen">
       <Outlet />
     </div>

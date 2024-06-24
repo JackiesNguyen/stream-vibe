@@ -1,5 +1,4 @@
-import { Button, Heading } from '~/components'
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '~/components/Accordion'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, Button, Heading } from '~/components/shared'
 import accordions from '~/constants/accordions'
 
 const Questions = () => {
@@ -7,8 +6,8 @@ const Questions = () => {
     <section className="flex flex-col gap-10 py-10 lg:gap-20 lg:py-20 xl:gap-40">
       <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:justify-between">
         <Heading
-          content="Frequently Asked Questions"
-          subContent="Got questions? We've got answers! Check out our FAQ section to find answers to the most common questions about StreamVibe."
+          title="Frequently Asked Questions"
+          subTitle="Got questions? We've got answers! Check out our FAQ section to find answers to the most common questions about StreamVibe."
         />
         <Button>Ask a Question</Button>
       </div>

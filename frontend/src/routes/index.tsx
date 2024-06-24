@@ -1,14 +1,22 @@
-import { useRoutes } from 'react-router-dom'
+import { useLocation, useRoutes } from 'react-router-dom'
 
 import PATH from '~/constants/paths'
 import { DefaultLayout } from '~/layouts'
-
 import { HomePage, MoviesOpenPage, MoviesShowsPage, NotFound } from '~/pages'
 
 const Routes = () => {
+  const location = useLocation()
+
+  const isFixedPosition = () => {
+    if (location.pathname === PATH.USER.HOME) {
+      return true
+    }
+    return false
+  }
+
   const element = useRoutes([
     {
-      element: <DefaultLayout />,
+      element: <DefaultLayout isFixedPosition={isFixedPosition()} />,
       children: [
         {
           index: true,

@@ -16,11 +16,11 @@ interface INextPreButtonsProps {
 const NextPreButtons = ({ className, onNextClick, onPrevClick, totalData, onStepClick }: INextPreButtonsProps) => {
   const [currentStep, setCurrentStep] = useState<number>(0)
 
-  const TOTAL_DOTS = Math.min(Math.ceil(totalData / carouselSettings.slidesToShow), 4)
+  const TOTAL_DOTS = Math.min(Math.ceil(totalData / carouselSettings().slidesToShow), 4)
 
   const handleStepClick = (index: number) => {
     setCurrentStep(index)
-    onStepClick(index * carouselSettings.slidesToShow)
+    onStepClick(index * carouselSettings().slidesToShow)
   }
 
   const handleNextClick = () => {
