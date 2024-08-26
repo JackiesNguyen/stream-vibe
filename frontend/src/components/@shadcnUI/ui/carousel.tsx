@@ -5,7 +5,8 @@ import useEmblaCarousel, { type UseEmblaCarouselType } from 'embla-carousel-reac
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 
 import cn from '~/libs/utils'
-import { Button } from '~/shadcn/ui/button'
+
+import { Button } from './button'
 
 type CarouselApi = UseEmblaCarouselType[1]
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
@@ -39,9 +40,10 @@ function useCarousel() {
 
   return context
 }
+
 const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement> & CarouselProps>(
   ({ orientation = 'horizontal', opts, setApi, plugins, className, children, ...props }, ref) => {
-    const [carouselRef, carouselApi] = useEmblaCarousel(
+    const [carouselRef, api] = useEmblaCarousel(
       {
         ...opts,
         axis: orientation === 'horizontal' ? 'x' : 'y',
@@ -51,22 +53,22 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
     const [canScrollPrev, setCanScrollPrev] = React.useState(false)
     const [canScrollNext, setCanScrollNext] = React.useState(false)
 
-    const onSelect = React.useCallback((api: CarouselApi) => {
-      if (!api) {
+    const onSelect = React.useCallback((carouselApi: CarouselApi) => {
+      if (!carouselApi) {
         return
       }
 
-      setCanScrollPrev(api.canScrollPrev())
-      setCanScrollNext(api.canScrollNext())
+      setCanScrollPrev(carouselApi.canScrollPrev())
+      setCanScrollNext(carouselApi.canScrollNext())
     }, [])
 
     const scrollPrev = React.useCallback(() => {
-      carouselApi?.scrollPrev()
-    }, [carouselApi])
+      api?.scrollPrev()
+    }, [api])
 
     const scrollNext = React.useCallback(() => {
-      carouselApi?.scrollNext()
-    }, [carouselApi])
+      api?.scrollNext()
+    }, [api])
 
     const handleKeyDown = React.useCallback(
       (event: React.KeyboardEvent<HTMLDivElement>) => {
@@ -82,41 +84,43 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
     )
 
     React.useEffect(() => {
-      if (!carouselApi || !setApi) {
+      if (!api || !setApi) {
         return
       }
 
-      setApi(carouselApi)
-    }, [carouselApi, setApi])
+      setApi(api)
+    }, [api, setApi])
 
     React.useEffect(() => {
-      if (!carouselApi) {
+      if (!api) {
         return
       }
 
-      onSelect(carouselApi)
-      carouselApi.on('reInit', onSelect)
-      carouselApi.on('select', onSelect)
+      onSelect(api)
+      api.on('reInit', onSelect)
+      api.on('select', onSelect)
 
-      carouselApi.off('select', onSelect)
-    }, [carouselApi, onSelect])
-
-    const memoizedValue = React.useMemo(
-      () => ({
-        carouselRef,
-        api: carouselApi,
-        opts,
-        orientation: opts?.axis === 'y' ? 'vertical' : 'horizontal',
-        scrollPrev,
-        scrollNext,
-        canScrollPrev,
-        canScrollNext,
-      }),
-      [carouselRef, carouselApi, opts, scrollPrev, scrollNext, canScrollPrev, canScrollNext],
-    )
+      // eslint-disable-next-line consistent-return
+      return () => {
+        api.off('select', onSelect)
+      }
+    }, [api, onSelect])
 
     return (
-      <CarouselContext.Provider value={memoizedValue as CarouselContextProps}>
+      <CarouselContext.Provider
+        // eslint-disable-next-line react/jsx-no-constructed-context-values
+        value={{
+          carouselRef,
+          api,
+          opts,
+          // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+          orientation: orientation || (opts?.axis === 'y' ? 'vertical' : 'horizontal'),
+          scrollPrev,
+          scrollNext,
+          canScrollPrev,
+          canScrollNext,
+        }}
+      >
         <div
           ref={ref}
           onKeyDownCapture={handleKeyDown}
@@ -131,7 +135,6 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
     )
   },
 )
-
 Carousel.displayName = 'Carousel'
 
 const CarouselContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
